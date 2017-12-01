@@ -1,4 +1,15 @@
+def reverse_captcha(txt):
+    arr = [int(x) for x in list(txt)]
+    total = 0
+    previous = None
 
-def reverse_captcha(input):
+    for c in arr:
+        if c == previous:
+            total += c
 
-    return sum([x for x in input.split("")])
+        previous = c
+
+    if arr[0] == arr[-1]:
+        total += arr[0]
+
+    return total
