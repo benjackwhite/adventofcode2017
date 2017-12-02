@@ -8,4 +8,4 @@ def test_reverse_captcha_should_return_sum_of_consequent_numbers():
     assert reverse_captcha("1234") == 0
     assert reverse_captcha("91212129") == 9
 
-    assert reverse_captcha(target) == -1
+    assert reverse_captcha(target) == 995
