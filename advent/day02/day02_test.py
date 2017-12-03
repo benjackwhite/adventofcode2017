@@ -31,4 +31,4 @@ def test_calculate_checksum_two():
 9 4 7 3
 3 8 6 5""") == 9
 
-    assert calculate_checksum_two(target) == -1
+    assert calculate_checksum_two(target) == 236
