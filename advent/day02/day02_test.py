@@ -1,4 +1,4 @@
-from day02 import calculate_checksum 
+from day02 import calculate_checksum, calculate_checksum_two
 
 target = """116	1470	2610	179	2161	2690	831	1824	2361	1050	2201	118	145	2275	2625	2333
 976	220	1129	553	422	950	332	204	1247	1092	1091	159	174	182	984	713
@@ -24,3 +24,11 @@ def test_calculate_checksum():
 2 4 6 8""") == 18
 
     assert calculate_checksum(target) == 32020
+
+
+def test_calculate_checksum_two():
+    assert calculate_checksum_two("""5 9 2 8
+9 4 7 3
+3 8 6 5""") == 9
+
+    assert calculate_checksum_two(target) == -1
