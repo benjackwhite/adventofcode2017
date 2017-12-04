@@ -13,8 +13,8 @@ def test_calculate_distance():
 
 def test_calculate_next_large_value():
     assert calculate_next_large_value(1) == 2
-    assert calculate_next_large_value(12) == 3
-    assert calculate_next_large_value(23) == 2
-    assert calculate_next_large_value(1024) == 31
+    assert calculate_next_large_value(2) == 4
+    assert calculate_next_large_value(10) == 11
+    assert calculate_next_large_value(133) == 142
 
-    assert calculate_next_large_value(target) == -1
+    assert calculate_next_large_value(target) == 330785

@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 def manhattan_distance(start, end):
     start_x, start_y = start
     end_x, end_y = end
@@ -11,9 +13,9 @@ def create_spiral(start=1, end= 1000):
     direction = 0
     pointer = (0, 0)
     corners = [0, 0, 0, 0]
-    spiral = {
+    spiral = OrderedDict({
         start: pointer
-    }
+    })
 
     for i in range(start + 1, end + 1):
         if direction == 0:
@@ -53,7 +55,32 @@ def calculate_distance(target, entry=1):
 
 
 def calculate_next_large_value(target, entry=1):
-    spiral = create_spiral(start=entry, end=target + 1)
+    spiral = create_spiral(start=entry, end=target + 10)
     reverse_spiral = { value: key for key, value in spiral.items() }
+
+    new_spiral = OrderedDict()
+
+    for v, pos in spiral.items():
+        if pos == (0,0):
+            new_spiral[pos] = v
+            continue
+        value = 0
+
+        value += new_spiral.get((pos[0] - 1, pos[1] - 1), 0)
+        value += new_spiral.get((pos[0] - 1, pos[1]), 0)
+        value += new_spiral.get((pos[0], pos[1] - 1), 0)
+        value += new_spiral.get((pos[0] + 1, pos[1] + 1), 0)
+        value += new_spiral.get((pos[0] + 1, pos[1]), 0)
+        value += new_spiral.get((pos[0], pos[1] + 1), 0)
+        value += new_spiral.get((pos[0] - 1, pos[1] + 1), 0)
+        value += new_spiral.get((pos[0] + 1, pos[1] - 1), 0)
+
+        new_spiral[pos] = value
+
+    vals = sorted([v for k, v in new_spiral.items()])
+
+    for idx, v in enumerate(vals):
+        if v > target:
+            return v
 
     return 0
