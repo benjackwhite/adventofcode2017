@@ -11,5 +11,5 @@ def test_reach_exit():
 
 def test_reach_exit_two():
     assert reach_exit_two([0, 3, 0, 1, -3]) == 10
-    assert reach_exit_two(target_list) == -1
+    assert reach_exit_two(target_list) == 29629538
 
