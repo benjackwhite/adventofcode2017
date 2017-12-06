@@ -1,4 +1,4 @@
-from day06 import balance_banks, balance_banks_two
+from day06 import balance_banks
 
 
 target_banks = [11,11,13,7,0,15,5,5,4,4,1,1,7,1,15,11]

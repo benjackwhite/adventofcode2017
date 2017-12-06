@@ -1,7 +1,6 @@
 from day05 import reach_exit, reach_exit_two
 from data import data
 
-
 target_list = [int(x) for x in data.split("\n")]
 
 def test_reach_exit():
