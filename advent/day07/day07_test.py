@@ -19,10 +19,10 @@ cntj (57)"""
 
 
 def test_find_bottom():
-    assert find_bottom(example_data) == "tknk"
-    assert find_bottom(data) == "svugo"
+    assert find_bottom(example_data).name == "tknk"
+    assert find_bottom(data).name == "svugo"
 
 
 def test_find_weight_change():
     assert find_weight_change(example_data) == 60
-    # assert find_weight_change(data) == "svugo"
+    assert find_weight_change(data) == 1152
